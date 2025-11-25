@@ -40,7 +40,20 @@ typedef PtrToNode List; /* 定义单链表类型 */
 
 
 
-int FactorialSum( List L )
-{
-
+int FactorialSum( List L ) {
+    int sum = 0;
+    
+    while (L != NULL) {
+        int factorial = 1;
+        
+        for (int i = 1; i <= L->Data; i++) {
+            factorial *= i;
+        }
+        
+        sum += factorial;
+        
+        L = L->Next;
+    }
+    
+    return sum;
 }
